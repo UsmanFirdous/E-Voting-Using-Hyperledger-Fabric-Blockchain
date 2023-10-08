@@ -1,0 +1,97 @@
+<style>
+  .input
+  {
+    width:400px;
+  }
+  .form-field
+  {
+    margin-left: 160px;
+    font-size:21px;
+  }
+  .btn
+  {
+    margin:0px auto;
+    width:300px;
+    border-radius: 150px 20px 150px 20px;
+  }
+  
+  </style>
+
+  <div class="content" style="width:840px ; background:#fff; border-radius: 150px 20px 150px 20px;border:solid 2px #FAC101;" >
+    <ul>
+    <li style="margin-left:50px ;">
+      <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+      <div style="float: left;"><a  href="#">Voters</a></div>
+      
+      <ul class="dropdown" style="clear: both; margin-top:32px;">
+
+        <li><a href="voter_insert"> Voter Register</a></li>
+        <li><a href="show_records"> Show All Voters</a></li>
+        
+      </ul>
+    </li>
+    </li>
+    <li> <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+      <div style="float: left;"><a  href="#">Candidates</a></div>
+      
+      <ul class="dropdown" style="clear: both; margin-top:32px;">
+        <li><a href="CandidatesRegister">Candidate Register</a></li>
+        <li><a href="ShowCandidates">Show All Candidates</a></li>
+        
+      </ul>
+    </li>
+  
+    <li > <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+      <div style="float: left;"><a  href="#">Candidate Region</a></div>
+      
+      <ul class="dropdown" style="clear: both; margin-top:32px;">
+        <li><a href="CandidateRegion_register">Region Register</a></li>
+        <li><a href="ShowCandidateRegion">Show All Region</a></li>
+        
+      </ul>
+    </li>
+    <li> <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+      <div style="float: left;"><a  href="#">Face Dataset</a></div>
+      
+      <ul class="dropdown" style="clear: both; margin-top:32px;">
+        <li><a href="facedataset">Dataset Register</a></li>
+        <li><a href="show_dataset">Show All Dataset</a></li>
+        
+      </ul>
+    </li>
+    <li> <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+      <div style="float: left;"><a style="background: #000;border:solid 2px #FAC101; color: #FFF;"   href="#">Thumb Dataset</a></div>
+      
+      <ul class="dropdown" style="clear: both; margin-top:32px;">
+        <li><a style="background: #000;border:solid 2px #FAC101; color: #FFF;"  href="thumbdataset">Dataset Register</a></li>
+        <li><a href="show_thumbdataset">Show All Dataset</a></li>
+        
+      </ul>
+    </li>
+    
+    </ul>
+  </div>
+  <div style="width: 800px;">
+    <% for(var i=0 ; i < errors.length; i++) { %>
+      <div class="error"><%= errors[i] %></div>
+      <% } %>
+  </div>
+  <div style="width:800px; margin-bottom: 60px;">
+    <h3 style="margin-top:20px; text-align: center; background: #000;color:#fff;border-radius: 150px 20px 150px 20px;width: 260px;padding: 5px;">Thumb Dataset Deatils</h3>
+    <form action="/thumbdataset_c" method="post" style="border:solid 2px #FAC101;">
+      <div class="form-field">
+        
+        <input class="input" placeholder="Enter CNIC" type="text" class="form-control" name="cnic" required>
+      </div>
+      <div class="form-field">
+        
+        <input class="input" placeholder="Enter Thumb Template" type="text" class="form-control" name="template" required>
+      </div>
+      
+      
+     
+      
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>

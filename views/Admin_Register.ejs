@@ -1,0 +1,156 @@
+<style>
+    .design
+    {
+      width:800px;
+      
+      border-radius: 150px 20px 150px 20px;
+    }
+    .input
+    {
+      width:400px;
+    }
+    .form-field
+    {
+      margin-left: 160px;
+      font-size:21px;
+    }
+    .btn
+    {
+      margin:0px auto;
+      width:300px;
+      border-radius: 150px 20px 150px 20px;
+    }
+    </style>
+<div style="width: 800px;">
+  
+  <% for(var i=0 ; i < errors.length; i++) { %>
+    <div class="error"><%= errors[i] %></div>
+    <% } %>
+  </div>
+  <h2 style="margin-top:20px; text-align: center; background: #000;color:#fff;border-radius: 150px 20px 150px 20px;width: 550px;padding: 5px;margin-left:-170px;"> Register Election-Commission/Polling Agent</h2>
+  <div style="width:800px; margin-bottom: 50px;">
+   
+    <form action="/Admin_Register_c" method="post">
+      <div class="form-field">
+        
+        <input class="input" placeholder="Enter Email Address" type="text" class="form-control" name="email" required>
+      </div>
+      <div class="form-field">
+         
+          <input class="input" placeholder="***********" type="password" class="form-control" name="password" required>
+        </div>
+        <div class="form-field">
+          
+            <select class="input" name="list" required>
+            <option>----------Select Status----------</option>
+            <option>Election-Commsion</option>
+           
+            <option>Na-01</option>  
+            <option>Na-02</option>  
+            <option>Na-03</option>  
+            <option>Na-04</option>
+            <option>Na-05</option> 
+            <option>Na-06</option> 
+            <option>Na-07</option> 
+            <option>Na-08</option> 
+            <option>Na-09</option> 
+            <option>Na-10</option>
+            <option>Na-11</option>
+            <option>Na-12</option>
+            <option>Na-13</option>
+            <option>Na-14</option>       
+            <option>Na-15</option>
+            <option>Na-16</option>
+            <option>Na-17</option>
+            <option>Na-18</option>
+            <option>Na-19</option>
+            <option>Na-20</option>
+            <option>Na-21</option>
+            <option>Na-22</option>
+            <option>Na-23</option>
+            <option>Na-24</option>
+            <option>Na-25</option>
+            <option>Na-26</option>
+            <option>Na-27</option>    
+            <option>Na-28</option>
+            <option>Na-29</option>
+            <option>Na-30</option>
+            <option>Na-31</option>
+            <option>Na-32</option>
+            <option>Na-33</option>
+            <option>Na-34</option>
+            <option>Na-35</option>
+            <option>Na-36</option>
+            <option>Na-37</option>
+            <option>Na-38</option>
+            <option>Na-39</option>
+            <option>Na-40</option>
+            <option>Na-41</option>
+            <option>Na-42</option>
+            <option>Na-43</option>
+            <option>Na-44</option>
+            <option>Na-45</option>
+            <option>Na-46</option>
+            <option>Na-47</option>
+            <option>Na-48</option>
+            <option>Na-49</option>
+            <option>Na-50</option>
+            <option>Na-51</option>
+            <option>Na-52</option>
+            <option>Na-53</option>
+            <option>Na-54</option>
+            <option>Na-55</option>
+            <option>Na-56</option>
+            <option>Na-57</option>
+            <option>Na-58</option>
+            <option>Na-59</option>
+            <option>Na-60</option>
+            <option>Na-61</option>
+            <option>Na-62</option>
+            <option>Na-63</option>
+            <option>Na-64</option>
+            <option>Na-65</option>
+            <option>Na-66</option>
+            <option>Na-67</option>
+            <option>Na-68</option>
+            <option>Na-69</option>
+            <option>Na-70</option>
+            <option>Na-71</option>
+            <option>Na-72</option>
+            <option>Na-73</option>
+            <option>Na-74</option>
+            <option>Na-75</option>
+            <option>Na-76</option>
+            <option>Na-77</option>
+            <option>Na-78</option>
+            <option>Na-79</option>
+            <option>Na-80</option>
+            <option>Na-81</option>
+            <option>Na-82</option>
+            <option>Na-83</option>
+            <option>Na-84</option>
+            <option>Na-85</option>
+            <option>Na-86</option>
+            <option>Na-87</option>
+            <option>Na-88</option>
+            <option>Na-89</option>
+            <option>Na-90</option>
+            <option>Na-91</option>
+            <option>Na-92</option>
+            <option>Na-93</option>
+            <option>Na-94</option>
+            <option>Na-95</option>
+            <option>Na-96</option>
+            <option>Na-97</option>
+            <option>Na-98</option>
+            <option>Na-99</option>
+            <option>Na-100</option>
+            
+            </select>
+          </div>
+
+
+
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </div>

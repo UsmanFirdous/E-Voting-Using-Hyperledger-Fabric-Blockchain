@@ -1,0 +1,20 @@
+<% for (var i = 0; i < users.length; i++) { %>	
+		
+	
+		<% if(users[i]=='V') { %>
+		<br>
+	   
+			
+		<% } if(users[i]==',') { %>
+		 
+			<br>
+			
+			
+		<% } else if(users[i]==':') { %>
+		 
+			<%= '=' %>
+	    <% } else { %>
+		  <%= users[i] %>
+		<% } %>
+	
+	<% } %>

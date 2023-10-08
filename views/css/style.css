@@ -1,0 +1,137 @@
+@charset "utf-8";
+/* CSS Document */
+.tb
+{
+	float:left;
+	width:850px;
+	
+}
+.img
+{
+	float:left;
+	width:130px;
+		
+}
+
+.content
+{
+	width:400px;
+	margin:0px auto;
+}
+ul
+{
+	display:block;
+	
+}
+li
+{
+	display: inline;
+list-style: none;
+	float:left;
+	margin-bottom:20px;
+}
+li a
+{
+	text-decoration:none;
+	color:#000;
+	border-radius:10px;
+	padding:8px;
+    font-weight:bold;
+	margin-left:5px;
+	background-color:#CCC;
+}
+li a:hover
+{
+	color:#FFF;
+	background-color:#3B3B3B;
+}
+
+body
+{
+	background-color:#F8F8F8;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+.main
+{
+	width:980px;
+	margin:0px auto;
+	
+	
+}
+.header
+{
+	width:980px;
+	margin:0px auto;
+	
+}
+.tb table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+	text-align:left;
+}
+
+.tb td, th {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 14px 0px 14px 7px;
+}
+
+.tb tr:nth-child(odd){
+    background-color:#E4E4E4;
+}
+.btn
+{
+	clear:both;
+	background:#EFF482;
+	margin-top:10px;
+}
+.reg table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+	text-align:left;
+	
+}
+
+
+.reg td {
+    border: 1px solid #FFF;
+    text-align: left;
+    padding: 14px 0px 14px 7px;
+}
+.reg th {
+    border: 1px solid #FFF;
+    text-align: left;
+    padding: 14px 0px 14px 7px;
+}
+
+
+    
+
+.inner
+{
+	clear:both;
+	margin-top:20px;
+	background-color:#FFF;
+	border:solid #E4E4E4;
+	border-radius:10px;
+}
+.ch table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+	text-align:left;
+}
+
+.ch td, th {
+    border: 1px solid #ccc;
+    text-align: left;
+    padding: 14px 0px 14px 7px;
+}
+
+.ch tr:nth-child(even){
+    background-color:#E4E4E4;
+	
+}

@@ -1,0 +1,82 @@
+<div class="content" style="width:840px ; background:#fff; border-radius: 150px 20px 150px 20px;border:solid 2px #FAC101;" >
+  <ul>
+  <li style="margin-left:50px ;">
+    <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+    <div style="float: left;"><a  href="#">Voters</a></div>
+    
+    <ul class="dropdown" style="clear: both; margin-top:32px;">
+      <li><a href="voter_insert"> Voter Register</a></li>
+      <li><a href="show_records">Show All Voters</a></li>
+      
+    </ul>
+  </li>
+  </li>
+  <li> <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+    <div style="float: left;"><a  href="#">Candidates</a></div>
+    
+    <ul class="dropdown" style="clear: both; margin-top:32px;">
+      <li><a href="CandidatesRegister">Candidate Register</a></li>
+      <li><a href="ShowCandidates">Show All Candidates</a></li>
+      
+    </ul>
+  </li>
+
+  <li > <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+    <div style="float: left;"><a  href="#">Candidate Region</a></div>
+    
+    <ul class="dropdown" style="clear: both; margin-top:32px;">
+      <li><a href="CandidateRegion_register">Region Register</a></li>
+      <li><a href="ShowCandidateRegion">Show All Region</a></li>
+      
+    </ul>
+  </li>
+  <li> <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+    <div style="float: left;"><a  href="#">Face Dataset</a></div>
+    
+    <ul class="dropdown" style="clear: both; margin-top:32px;">
+      <li><a href="facedataset">Dataset Register</a></li>
+      <li><a href="show_dataset">Show All Dataset</a></li>
+      
+    </ul>
+  </li>
+  <li> <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+    <div style="float: left;"><a style="background: #000;border:solid 2px #FAC101; color: #FFF;"   href="#">Thumb Dataset</a></div>
+    
+    <ul class="dropdown" style="clear: both; margin-top:32px;">
+      <li><a href="thumbdataset">Dataset Register</a></li>
+      <li><a style="background: #000;border:solid 2px #FAC101; color: #FFF;"  href="show_thumbdataset">Show All Dataset</a></li>
+      
+    </ul>
+  </li>
+  
+  </ul>
+</div>
+<div>
+    <form action="/search_single_thumbdataset" method="post" style="width: 600px; background-color:#21CB65;border: none; padding: none">
+      <div class="form-field" style="margin-left:30px;">
+        <input class="search" type="number" name="cnic" required placeholder="Enter Voter CNIC No">
+        <button style="background-color:#fff;color:#000;text-decoration:none; border-radius: 0px 10px 10px 0px; font-weight: bold; cursor: pointer;  text-align: center; margin-top:5px;margin-left:-5px; border:none;padding: 7px 40px 6px 40px; font-weight: bold;font-size:15px " type="submit">Search</button>
+      </div>
+      
+    </form>
+  </div>
+  
+  <div style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-top:-20px; width:800px; ">
+  <% for(var i=0 ; i < voters.length; i++) { %>
+   
+    <div style="float:left;  width:800px; margin-top: 0px; font-size: 16px;font-weight: bold;clear: both;background:#FFF;margin-top:20px;border-radius: 150px 20px 150px 20px; width:800px;padding-left:70px; padding-bottom: 20px;border:solid 2px #FAC101;">
+      <h4><span style="margin-right:45px; color:#21CB65">Voter CNIC:</span><%= voters[i].VoterID %></h4>
+      <h4><span style="margin-right:61px; color:#21CB65">Template:</span><%= template[i] %></h4>
+      
+    
+    
+
+    
+    <div style="clear: both">
+      <a class="delete" href="delete_thumbdataset/<%= voters[i]._id %>">Delete</a>
+      <a class="edit" href="thumbdataset_update/<%= voters[i]._id %>">Edit Details</a>
+      <br>
+    </div>
+    </div>
+    <% } %>
+  </div>

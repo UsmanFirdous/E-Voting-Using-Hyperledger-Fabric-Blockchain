@@ -1,0 +1,31 @@
+<style>
+    .search{
+      width:400px;
+      height: 30px;
+      font-size: 20px;
+      border-radius: 7px;
+    }
+    </style>
+    
+        
+      </form>
+    </div>
+    
+    <div style="float: left;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-top:20px; ">
+    <% if(election!="") { %>
+      <div style=" width:500px; margin-top: 20px; font-size: 16px;">
+        <h4><span style="margin-right:80px; color:#FFF">Election ID:</span><%= election._id %></h4>
+        <h4><span style="margin-right:80px; color:#FFF">Election Year:</span><%= election.ElectionYear %></h4>
+        
+      </div>
+      
+      <div style="clear: both">
+        <a style="background-color:#fff;color: crimson;text-decoration:none; border-radius: 10px; font-weight: bold;  text-align: center; padding: 8px 50px 8px 50px; " href="delete_Election/<%= election._id %>">Delete</a>
+        <a style="background-color:#fff;color:#000;text-decoration:none; border-radius: 10px; font-weight: bold;  text-align: center; padding: 8px 50px 8px 50px; " href="Election_updated/<%= election._id %>">Edit Details</a>
+        <hr style="margin-top: 20px;"> </div>
+        <% } else {%>
+  
+          <h3 style="color:crimson; font-size:18px;">sorry no record found!</h3>
+        
+         <% }%>
+    </div>

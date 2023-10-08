@@ -1,0 +1,222 @@
+    
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Forms in Node.js</title>
+     
+      <link rel="stylesheet" href="/style.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="/styless.css">
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        type="text/javascript"></script>
+      <script type="text/javascript" src="/jquery.form.min.js"></script>
+     
+      <script>
+        window.location.hash="no-back-button";
+        window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+        window.onhashchange=function(){window.location.hash="no-back-button";}
+        </script>
+      
+      <style>
+          .design
+          {
+            width:800px;
+            
+            border-radius: 150px 20px 150px 20px;
+          }
+          .input
+          {
+            width:400px;
+          }
+          .form-field
+          {
+            margin-left: 160px;
+            font-size:21px;
+          }
+          .btn
+          {
+            margin:0px auto;
+            width:300px;
+            border-radius: 150px 20px 150px 20px;
+          }
+          .logout
+          {
+            margin-left:580px; color:#fff;
+            border:solid 2px #0F2F1D;
+          }
+          .logout:hover
+          {
+            background: #fff;
+            color: #000;
+          }
+          .search{
+      width:400px;
+      height: 30px;
+      font-size: 20px;
+      border-radius: 7px;
+    }
+    body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgb(237, 118, 118) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
+}
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+          
+          </style>
+    
+    
+    
+    </head>
+
+    <body style="font-weight: bold; font-family: Arial, Helvetica, sans-serif; " >
+      <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+     
+     </div>
+      
+    <div class="main"  style="border-radius: 20px 150px 20px 150px;" >
+    <div class="header">
+    
+    </div>
+     <h2 style="margin:30px auto; width:700px;color:#FAC101;">Welcome to Hyper   ledger  
+      E-Voting Blockchain Interface </h2>
+      
+      
+    
+    
+     <div class="content" >
+        <ul>
+        <!----<li><a  href="/user">List All Votes</a></li>
+        <li><a  href="/totalvotes">Results</a></li>
+        <li ><a href="/single">Query For Votes</a></li>
+        <li><a  href="/insert">Cast the Vote</a></li>
+        <li><a class="logout"  href="/logout">Logout</a></li>-->
+        </ul>
+        </div>
+      </div>
+      <br>
+      <div class="status" style="width:400px">
+    
+        <div id="status_sub1">Step 1</div>
+        <div id="status_sub2">Step 2</div>
+        <div id="status_sub3">Step 3</div>
+        <div id="status_sub5">Final</div>
+      </div>
+      <script>
+         document.getElementById("status_sub2").style.color = "#FAC101";
+         document.getElementById("status_sub2").style.background = "#0F2F1D";
+         document.getElementById("status_sub2").style.border = "solid #FAC101";
+         document.getElementById("status_sub1").style.color = "#FAC101";
+         document.getElementById("status_sub1").style.background = "#0F2F1D";
+         document.getElementById("status_sub1").style.border = "solid #FAC101";
+         </script>
+   
+   <div style="width: 800px;">
+  
+    <% for(var i=0 ; i < errors.length; i++) { %>
+      <div class="error"><%= errors[i] %></div>
+      <% } %>
+    </div>
+<div class="design">
+    <h2 style="margin-top:20px; text-align: center; background: #000;color:#fff;border-radius: 150px 20px 150px 20px;width: 330px;padding: 5px;"> Email Verification Phase</h2>
+  <div>
+  <form action="/verification" method="post" style="border:solid 2px #FAC101">
+    
+    <div class="form-field">
+      <input placeholder="Enter Email Verification Code"  class="input" type="text" class="form-control" name="key1" required>
+    </div>
+    <input type="hidden" name="cnic" value="<%=voter.CNIC%>">
+    <input type="hidden" name="key2" value="<%=key%>">
+    <button type="submit" class="btn btn-primary">Click to Verify</button>
+  </form>
+  <form style="clear:both;background: none;border: none;width:600px; margin-left: 100px" action="/email" method="POST">
+    <input type="hidden" value="<%=voter.CNIC%>" name="cnic">
+    <button style="font-weight:bold;margin:0px auto;border-radius: 150px 20px 150px 20px;" class="btn" type="submit">Click To Again Send Email Verification Code</button>
+      </form>
+   
+    
+    <div style="background-color: #0F2F1D;color:#FAC101 ;text-align: center;width:880px;padding:10px;border-radius: 20px 150px 20px 150px;margin-top:150px; border:solid thin #FAC101;">
+    CopyRight &#169; 2019-2020 E-Voting Using Hyperledger Fabric Blockchain. All rights reserved.
+    </div>
+    </body>
+    
+    </html>
+    

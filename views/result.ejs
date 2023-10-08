@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Forms in Node.js</title>
+ 
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+  
+ <!-- 
+  <script>
+    window.location.hash="no-back-button";
+    window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+    window.onhashchange=function(){window.location.hash="no-back-button";}
+    </script>
+  -->
+  <style>
+      .design
+      {
+        width:800px;
+        
+        border-radius: 150px 20px 150px 20px;
+      }
+      .input
+      {
+        width:400px;
+      }
+      .form-field
+      {
+        margin-left: 160px;
+        font-size:21px;
+      }
+      .btn
+      {
+        margin:0px auto;
+        width:300px;
+        border-radius: 150px 20px 150px 20px;
+      }
+      .logout
+      {
+        margin-left:580px; color:#0F2F1D;
+        border: none;
+      }
+      .logout:hover
+      {
+        background: #0F2F1D;
+        border: none;
+      }
+      </style>
+
+
+
+</head>
+<body style="background:#21CB65;font-weight: bold; font-family: Arial, Helvetica, sans-serif;" >
+
+  
+<div class="main"  style="border-radius: 20px 150px 20px 150px;" >
+<div class="header">
+
+</div>
+ <h2 style="margin:30px auto; width:700px;color:#FAC101">Welcome to Hyper   ledger  
+  E-Voting Blockchain Interface </h2>
+
+
+ <div class="content" >
+    <ul>
+    <!----<li><a  href="/user">List All Votes</a></li>
+    <li><a  href="/totalvotes">Results</a></li>
+    <li ><a href="/single">Query For Votes</a></li>
+    <li><a  href="/insert">Cast the Vote</a></li>-->
+    <li><a class="logout"  href="/logout">Logout</a></li>
+    </ul>
+    </div>
+  </div>
+<style>
+.design
+	{
+		margin-top:8px;
+	}
+</style>
+</head>
+
+<body style="margin:0px auto;">
+
+
+<!------------------------------Content------------------------->
+<h3 style="margin-top:20px;margin-left:-250px; text-align: center; background: #000;color:#fff;border-radius: 150px 20px 150px 20px;width: 500px;padding: 5px;">Result of ID= <%= qresult %></h3>
+<h2></h2>
+<div style="color:#000; clear:both;width:860px;margin:-30px auto;font-size:25px;">
+	
+	<% if(users!="") { %>
+		<div style="margin-top:30px;margin-left:30px; padding: 40px 0px 40px 100px; background: #FFF;border-radius: 150px 20px 150px 24px; font-size: 20px; width:750px;border:solid 2px #FAC101 ">
+				<% for (var i = 0; i < labels.length; i++) { %>
+					<% if(labels[i]=="VoterId" && i!=0) { %>
+						 
+						 <hr style="margin-left: -100px;margin-top:30px; border:dotted #21CB65;">
+						 <Br>
+						<% } %>
+						<% if(labels[i]=="VoterId") { %>		
+					<div class="design"><span style="margin-right:66px;"><%= labels[i] %>:</span><%=values[i] %></div>
+					
+					<% } else if(labels[i]=="ElectionYear"){ %>
+						<div class="design"><span style="margin-right: 13px;"><%= labels[i] %>:</span><%=values[i] %></div>
+					
+					<% } else if(labels[i]=="MNA"){ %>
+					<div class="design">	<span style="margin-right: 88px;"><%= labels[i] %>:</span><%=values[i] %></div>
+					
+					<% } else if(labels[i]=="MPA"){ %>
+					<div class="design">	<span style="margin-right: 90px;"><%= labels[i] %>:</span><%=values[i] %></div>
+					
+					<% } else if(labels[i]=="RegionName"){ %>
+					<div class="design">	<span style="margin-right:11px;"><%= labels[i] %>:</span><%=values[i] %></div>
+					
+					<% } else if(labels[i]=="TimeStemp"){ %>
+					<div class="design"><span style="margin-right: 26px;"><%= labels[i] %>:</span><%=values[i] %></div>
+						
+					<% } %>
+				
+				<% } %>
+			</div>
+	
+	<% } else { %>
+		<h3 style="color:crimson; font-size:18px;">sorry no record found!</h3>
+		<% } %>
+ </div>
+
+
+
+</div>
+<div style="background-color: #0F2F1D;color:#FAC101 ;text-align: center;width:880px;padding:10px;border-radius: 20px 150px 20px 150px;margin-top:10px; border:solid thin #FAC101;margin-top: 120px;">
+  CopyRight &#169; 2019-2020 E-Voting Using Hyperledger Fabric Blockchain. All rights reserved.
+  </div>
+</body>
+</html>

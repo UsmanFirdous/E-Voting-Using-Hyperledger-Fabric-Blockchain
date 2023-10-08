@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Forms in Node.js</title>
+ 
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="/styless.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    type="text/javascript"></script>
+  <script type="text/javascript" src="/jquery.form.min.js"></script>
+ 
+  <script>
+    window.location.hash="no-back-button";
+    window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+    window.onhashchange=function(){window.location.hash="no-back-button";}
+    </script>
+  
+  <style>
+      .design
+      {
+        width:800px;
+        
+        border-radius: 150px 20px 150px 20px;
+      }
+      .input
+      {
+        width:400px;
+      }
+      .form-field
+      {
+        margin-left: 160px;
+        font-size:21px;
+      }
+      .btn
+      {
+        margin:0px auto;
+        width:300px;
+        border-radius: 150px 20px 150px 20px;
+      }
+      .logout
+      {
+        margin-left:580px; color:#fff;
+        border:solid 2px #0F2F1D;
+      }
+      .logout:hover
+      {
+        background: #fff;
+        color: #000;
+      }
+
+	  .design
+	{
+		margin-top:8px;
+	}
+      
+      </style>
+
+
+
+</head>
+<body style="background:#21CB65;font-weight: bold; font-family: Arial, Helvetica, sans-serif; " >
+
+  
+<div class="main"  style="border-radius: 20px 150px 20px 150px;" >
+<div class="header">
+
+</div>
+ <h2 style="margin:30px auto; width:700px;color:#FAC101;">Welcome to Hyper   ledger  
+  E-Voting Blockchain Interface </h2>
+  
+  
+
+
+ <div class="content" >
+    <ul>
+    <!----<li><a  href="/user">List All Votes</a></li>
+    <li><a  href="/totalvotes">Results</a></li>
+    <li ><a href="/single">Query For Votes</a></li>
+    <li><a  href="/insert">Cast the Vote</a></li>-->
+    <li><a class="logout"  href="/logout">Logout</a></li>
+    </ul>
+    </div>
+  </div>
+  <br>
+  <div class="content" style="width:410px ;clear: both; background:#fff; border-radius: 150px 20px 150px 20px;border:solid 2px #FAC101;" >
+	<ul>
+	<li style="margin-left:20px;"><a style="background: #000;border:solid 2px #FAC101; color: #FFF;" href="user">All Random Votes</a></li>
+	<li><a href="totalvotes">All Counted Votes</a> </li>  
+	</ul>
+  </div>
+  
+<div style="color:#000; clear:both;width:860px;margin:0px auto;font-size:25px;">
+	<h2 style="margin-top:20px;margin-left:30px; text-align: center; background: #000;color:#FAC101;border-radius: 150px 20px 150px 20px;width: 250px;padding: 5px;">All Votes Details</h2>
+	
+	<div style="margin-top:30px;margin-left:30px; padding: 40px 0px 40px 100px; background: #FFF;border-radius: 150px 20px 150px 24px; font-size: 20px; width:750px;border:solid 2px #FAC101; ">
+	  <% if(record.length>0) {%>
+      <% for (var i = 0; i < record.length; i++) { %>
+        <% if(record[i].Record.ElectionYear!="nll") { %>
+    <div style=" margin-top: 10px; margin-left: -20px; font-size: 16px;font-weight: bold;clear: both;background:#FFF;border-radius: 150px 20px 150px 20px; width:600px;padding-left:70px; padding-top: 10px;border:solid 2px #FAC101;">
+      <!-- <h4><span style="margin-right:88px; ">VoterID:</span><%= record[i].VoterId %></h4> -->
+      <h4><span style="margin-right:45px;">Election Year:</span><%= record[i].Record.ElectionYear %></h4>
+      <h4><span style="margin-right:55px; ">Time Stemp:</span><%= record[i].Record.TimeStemp %></h4>
+      <h4><span style="margin-right:20px; ">Candidate Name:</span><%=record[i].Record.position %></h4>
+    </div>
+            <% } %>
+    <% } %>
+		<% } else {%>
+			<h3 style="color:crimson; font-size:18px;">Sorry! No Vote Exist</h3>
+			<% } %>
+	</div>
+
+ </div>
+
+
+
+</div>
+
+<div style="background-color: #0F2F1D;color:#FAC101 ;text-align: center;width:880px;padding:10px;border-radius: 20px 150px 20px 150px;margin-top:150px; border:solid thin #FAC101;">
+CopyRight &#169; 2019-2020 E-Voting Using Hyperledger Fabric Blockchain. All rights reserved.
+</div>
+</body>
+
+</html>

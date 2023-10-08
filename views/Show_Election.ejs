@@ -1,0 +1,32 @@
+<style>
+    .search{
+      width:400px;
+      height: 30px;
+      font-size: 20px;
+      border-radius: 7px;
+    }
+    </style>
+    <div>
+      <form action="/search_single_election" method="post" style="width: 600px; background-color:#21CB65;border: none;">
+        <div class="form-field">
+          <input class="search" type="number" name="electionyear" required placeholder="Enter Year">
+          <button style="background-color:#fff;color:#000;text-decoration:none; border-radius: 7px; font-weight: bold;  text-align: center; padding: 6px 40px 6px 40px; " type="submit">Search</button>
+        </div>
+        
+      </form>
+    </div>
+    
+    <div style="float: left;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-top:-20px; ">
+    <% for(var i=0 ; i < election.length; i++) { %>
+      <div style=" width:500px; margin-top: 20px; font-size: 16px;">
+        <h4><span style="margin-right:80px; color:#FFF">Election ID:</span><%= election[i]._id %></h4>
+        <h4><span style="margin-right:80px; color:#FFF">Election Year:</span><%= election[i].ElectionYear %></h4>
+        
+      </div>
+      
+      <div style="clear: both">
+        <a style="background-color:#fff;color: crimson;text-decoration:none; border-radius: 10px; font-weight: bold;  text-align: center; padding: 8px 50px 8px 50px; " href="delete_Election/<%= election[i]._id %>">Delete</a>
+        <a style="background-color:#fff;color:#000;text-decoration:none; border-radius: 10px; font-weight: bold;  text-align: center; padding: 8px 50px 8px 50px; " href="Election_updated/<%= election[i]._id %>">Edit Details</a>
+        <hr style="margin-top: 20px;"> </div>
+      <% } %>
+    </div>

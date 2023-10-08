@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>Click Sound</title>
+<style>
+button {
+  border: 0;
+  padding: 1rem 3rem;
+}
+#success {
+  background: lightgreen;
+}
+#error {
+  background: pink;
+}
+</style>
+
+
+
+</head>
+<body>
+
+<button id="success">Play Success Sound</button>
+<br><br>
+<button id="error">Play Error Sound</button>
+<script>
+onst context = new window.AudioContext();
+
+
+let successButton = document.querySelector("#success");
+successButton.addEventListener("click", function() {
+  playFile('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/success.mp3');
+});
+
+let errorButton = document.querySelector("#error");
+errorButton.addEventListener("click", function() {
+  playFile('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/error.mp3');
+});
+</scrip>
+</body>
+</html>

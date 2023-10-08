@@ -1,0 +1,14 @@
+<div style="width: 800px;">
+  
+    </div>
+    <div style="width:800px;">
+      <h3>Canstituency Record</h3>
+      <form action="/Election_added_c" method="post">
+        <div class="form-field">
+          <label>Election Year:</label>
+          <input class="input" type="number" class="form-control" value="<%= election.ElectionYear %>" name="electionyear" required>
+        </div>
+         <input type="hidden" value="<%= election._id %>" name="id">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>

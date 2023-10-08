@@ -1,0 +1,73 @@
+<style>
+    .search{
+      width:400px;
+      height: 30px;
+      font-size: 20px;
+      border-radius: 7px;
+    }
+    </style>
+    <div class="status">
+        <div id="status_sub1">Step 1</div>
+        <div id="status_sub2">Step 2</div>
+        <div id="status_sub3">Step 3</div>
+        <div id="status_sub4">Step 4</div>
+        <div id="status_sub5">Final</div>
+      </div>
+      <script>
+          document.getElementById("status_sub1").style.color = "#FAC101";
+         document.getElementById("status_sub1").style.background = "#0F2F1D";
+        
+         document.getElementById("status_sub1").style.border = "solid #FAC101";
+         document.getElementById("status_sub2").style.color = "#FAC101";
+           document.getElementById("status_sub2").style.background = "#0F2F1D";
+          
+           document.getElementById("status_sub2").style.border = "solid #FAC101";
+         </script>
+
+    <div class="content" style="width:580px ; background:#fff; border-radius: 150px 20px 150px 20px;border:solid 2px #FAC101;" >
+      <ul>
+      <li style="margin-left:50px ;"><a href="/">Start Page</a></li>
+      <li><a href="user">All Random Votes</a></li>
+      <li><a href="totalvotes">All Counted Votes</a> </li>
+    
+     
+      
+      </ul>
+    </div>
+    <h2 style="margin-top:20px;margin-left:-400px; text-align: center; background: #000;color:#FAC101;border-radius: 150px 20px 150px 20px;width: 350px;padding: 5px;">Biometric Phase</h2>
+    <div style="float: left;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-top:-0px; background:#FFF;margin-top:20px;border-radius: 150px 20px 150px 20px; width:800px;padding-left:70px; padding-bottom: 20px;border:solid 2px #FAC101; margin-bottom: 45px;;">
+    <% if(result!="") { %>
+      <div style="display:none">
+          <script>
+              document.getElementById("status_sub3").style.color = "#FAC101";
+             document.getElementById("status_sub3").style.background = "#0F2F1D";
+            
+             document.getElementById("status_sub3").style.border = "solid #FAC101";
+             </script>
+        <audio controls autoplay>
+        
+          <source src="face success.mp3" type="audio/mpeg">
+          
+        </audio>
+      </div>
+      
+        <h3 style="color:#21CB65; margin-left:10px;  font-size:18px;"> Voter Face Successfully match againts (<%= cnic %>) voter CNIC !</h3>
+        <a href="http://localhost:17457/Demo3.aspx?template=<%= template %>?cnic=<%= cnic %>" class="btn" style=" text-decoration: none ;width:400px;text-align: center;font-weight:bold;margin:0px auto;border-radius: 150px 20px 150px 20px;"  >Click to Thumb Verification Phase</a>
+
+      
+      
+  <% } else {%>
+    <div style="display:none">
+      <audio controls autoplay>
+      
+        <source src="face error.mp3" type="audio/mpeg">
+        
+      </audio>
+    </div>
+
+        <h3 style="color:crimson; font-size:18px;">Sorry No Face Match Found !</h3>
+        <a href="/" class="btn" style=" text-decoration: none ;width:400px;text-align: center;font-weight:bold;margin:0px auto;border-radius: 150px 20px 150px 20px;"  >Click to Start Menu</a>
+   <% }%>
+  
+  
+    </div>

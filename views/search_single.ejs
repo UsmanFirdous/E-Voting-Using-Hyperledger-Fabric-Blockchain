@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Forms in Node.js</title>
+ 
+  <link rel="stylesheet" href="/style.css" type="text/css" />
+  <link rel="stylesheet" type="text/css" href="/styless.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    type="text/javascript"></script>
+  <script type="text/javascript" src="/jquery.form.min.js"></script>
+ 
+  <script>
+    window.location.hash="no-back-button";
+    window.location.hash="Again-No-back-button";//again because google chrome don't insert first hash into history
+    window.onhashchange=function(){window.location.hash="no-back-button";}
+    </script>
+  
+  <style>
+      .design
+      {
+        width:800px;
+        
+        border-radius: 150px 20px 150px 20px;
+      }
+      .input
+      {
+        width:400px;
+      }
+      .form-field
+      {
+        margin-left: 160px;
+        font-size:21px;
+      }
+      .btn
+      {
+        margin:0px auto;
+        width:300px;
+        border-radius: 150px 20px 150px 20px;
+      }
+      .logout
+      {
+        margin-left:580px; color:#fff;
+        border:solid 2px #0F2F1D;
+      }
+      .logout:hover
+      {
+        background: #fff;
+        color: #000;
+      }
+
+
+      
+      </style>
+
+
+
+</head>
+<body style="background:#21CB65;font-weight: bold; font-family: Arial, Helvetica, sans-serif; " >
+
+  
+<div class="main"  style="border-radius: 20px 150px 20px 150px;" >
+<div class="header">
+
+</div>
+ <h2 style="margin:30px auto; width:700px;color:#FAC101;">Welcome to Hyper   ledger  
+  E-Voting Blockchain Interface </h2>
+  
+  
+
+
+ <div class="content" >
+    <ul>
+    <!----<li><a  href="/user">List All Votes</a></li>
+    <li><a  href="/totalvotes">Results</a></li>
+    <li ><a href="/single">Query For Votes</a></li>
+    <li><a  href="/insert">Cast the Vote</a></li>-->
+    <li><a class="logout"  href="/logout">Logout</a></li>
+    </ul>
+    </div>
+  </div>
+  <br>
+  <div class="content" style="width:760px ; background:#fff; border-radius: 150px 20px 150px 20px;border:solid 2px #FAC101;" >
+    <ul>
+   
+    <li style="margin-left: 20px;"><a href="voter_insert"> Voter Register</a></li>
+    <li><a href="show_records">Show All Voters</a></li>
+    </li>
+    
+    <li><a href="CandidatesRegister">Candidate Register</a></li>
+    <li><a href="ShowCandidates">Show All Candidates</a></li>
+  
+    <!-- <li > <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+      <div style="float: left;"><a  href="#">Candidate Region</a></div>
+      
+      <ul class="dropdown" style="clear: both; margin-top:32px;">
+        <li><a href="CandidateRegion_register">Region Register</a></li>
+        <li><a href="ShowCandidateRegion">Show All Region</a></li>
+        
+      </ul>
+    </li>
+    <li> <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+      <div style="float: left;"><a  href="#">Face Dataset</a></div>
+      
+      <ul class="dropdown" style="clear: both; margin-top:32px;">
+        <li><a href="facedataset">Dataset Register</a></li>
+        <li><a href="show_dataset">Show All Dataset</a></li>
+        
+      </ul>
+    </li>
+    <li> <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+      <div style="float: left;"><a  href="#">Thumb Dataset</a></div>
+      
+      <ul class="dropdown" style="clear: both; margin-top:32px;">
+        <li><a href="thumbdataset">Dataset Register</a></li>
+        <li><a href="show_thumbdataset">Show All Dataset</a></li>
+        
+      </ul>
+    </li> -->
+  
+    
+    
+    </ul>
+  </div>
+  <div style="margin-top:30px;">
+      
+  </div>
+  <div style="float: left;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-top:-20px;margin-bottom: 160px; ">
+    <% if(voters!="") { %>
+       <div style="width:800px; margin-top: 0px; font-size: 16px;font-weight: bold;clear: both;background:#FFF;margin-top:20px;border-radius: 150px 20px 150px 20px; width:800px;padding-left:70px; padding-bottom: 20px">
+    
+      <div style="float:left; width:450px; margin-top: 20px; font-size: 16px;"> 
+        
+        <h4><span style="margin-right:58px; ">Voter P-key:</span><%= voters._id %></h4>
+        <h4><span style="margin-right:88px; ">VoterID:</span><%= voters.VoterId %></h4>
+        <h4><span style="margin-right:105px;">Name:</span><%= voters.Name %></h4>
+        <h4><span style="margin-right:80px; ">CNIC NO:</span><%= voters.CNIC %></h4>
+        <h4><span style="margin-right:98px; ">FName:</span><%= voters.Fname %></h4>
+        <h4><span style="margin-right:37px; ">Email Address:</span><%= voters.Email %></h4>
+        <h4><span style="margin-right:82px; ">Halka No:</span><%= voters.Halka %></h4>
+      </div>
+      <div style="float: left;margin-top: 25px; margin-left:40px; " >
+      <img src="<%= voters.Picture %>" width="200" height="200"
+       style="border:solid #fff;border-radius: 10px;">
+      
+       <form  action="/picture_updated" method="post" enctype="multipart/form-data" style="width: 200px;border: none;">
+        
+          <input class="input" type="file" class="form-control" name="userPhoto" style="border-radius: 10px;margin-top:-10px;width: 200px;" required>
+        
+        <input type="hidden" name="id"  value="<%= voters._id %>">
+        <button type="submit" class="edit">Click to Update</button>
+      
+      </form>
+       
+    
+      </div>
+      <div style="clear: both">
+        <a class="delete" href="delete/<%= voters._id %>">Delete</a>
+        <a class="edit" href="details_updated/<%= voters._id %>">Edit Details</a>
+         </div>
+       </div>
+       <% } else {%>
+    
+        <h3 style="color:crimson; font-size:18px;">sorry no record found!</h3>
+      
+       <% }%>
+      
+    </div>
+<div style="background-color: #0F2F1D;color:#FAC101 ;text-align: center;width:880px;padding:10px;border-radius: 20px 150px 20px 150px;margin-top:10px; border:solid thin #FAC101;">
+CopyRight &#169; 2019-2020 E-Voting Using Hyperledger Fabric Blockchain. All rights reserved.
+</div>
+</body>
+
+</html>

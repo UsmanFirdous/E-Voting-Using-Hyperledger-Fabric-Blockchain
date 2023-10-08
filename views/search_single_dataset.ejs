@@ -1,0 +1,80 @@
+
+<div class="content" style="width:880px ; background:#fff; border-radius: 150px 20px 150px 20px;" >
+  <ul>
+  <li style="margin-left:50px ;">
+    <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+    <div style="float: left;"><a  href="#">Voters</a></div>
+    
+    <ul class="dropdown" style="clear: both; margin-top:32px;">
+      <li><a href="voter_insert"> Voter Register</a></li>
+      <li><a href="show_records">Show All Voters</a></li>
+      
+    </ul>
+  </li>
+  </li>
+  <li> <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+    <div style="float: left;"><a  href="#">Candidates</a></div>
+    
+    <ul class="dropdown" style="clear: both; margin-top:32px;">
+      <li><a href="CandidatesRegister">Candidate Register</a></li>
+      <li><a href="ShowCandidates">Show All Candidates</a></li>
+      
+    </ul>
+  </li>
+
+  <li > <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+    <div style="float: left;"><a  href="#">Candiate Region</a></div>
+    
+    <ul class="dropdown" style="clear: both; margin-top:32px;">
+      <li><a href="CandidateRegion_register">Region Register</a></li>
+      <li><a href="ShowCandidateRegion">Show All Region</a></li>
+      
+    </ul>
+  </li>
+  <li> <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+    <div style="float: left;"><a style="background: #000; color: #FFF;" href="#">Face Dataset</a></div>
+    
+    <ul class="dropdown" style="clear: both; margin-top:32px;">
+      <li><a href="facedataset">Dataset Register</a></li>
+      <li><a href="show_dataset">Show All Dataset</a></li>
+      
+    </ul>
+  </li>
+  <li> <div style="float: left;"><img src="img/arrow.png" width="10" height="10"></div>
+    <div style="float: left;"><a  href="#">Thumb Dataset</a></div>
+    
+    <ul class="dropdown" style="clear: both; margin-top:32px;">
+      <li><a href="thumbdataset">Dataset Register</a></li>
+      <li><a href="show_thumbdataset">Show All Dataset</a></li>
+      
+    </ul>
+  </li>
+  
+  </ul>
+</div>
+<div style="margin-top:30px;">
+  
+</div>
+
+<div style="float: left;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; margin-top:-20px;margin-bottom: 160px; ">
+  <% if(voters!="") { %>
+  <div style=" margin-top: 0px; font-size: 16px;font-weight: bold;clear: both;background:#FFF;margin-top:20px;border-radius: 150px 20px 150px 20px; width:700px;padding-left:70px; padding-bottom: 20px; padding-left:150px ;">
+
+  <div style="float:left; width:450px; margin-top: 20px; font-size: 16px;"> 
+    <h4><span style="margin-right:58px; ">Voter CNIC:</span><%= voters.VoterID %></h4>
+    <h4><span style="margin-right:58px; ">Voter Name:</span><%= voters.VoterName %></h4>
+    <h4><span style="margin-right:58px;">DatasetPath:</span><%= voters.DatasetPath %></h4>
+    
+  </div>
+  
+  <div style="clear: both">
+    <a class="delete" href="delete_dataset/<%= voters._id %>">Delete</a>
+    <a class="edit"  href="facedataset_update/<%= voters._id %>">Edit Details</a>
+    </div>
+  </div>
+  <% } else {%>
+  
+    <h3 style="color:crimson; font-size:18px;">sorry no record found!</h3>
+  
+   <% }%>
+</div>
